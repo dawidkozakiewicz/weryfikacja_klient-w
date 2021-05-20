@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
-import ThirdPersonHardVerification from "./ThirdPersonHardVerification";
-import ThirdPersonHardVerificationOtherCompanies from './ThirdPersonHardVerificationOtherCompanies'
+import AdditionalVerification from './AdditionalIdentyfication'
+
 function reducer(state, action) {
     switch (action.type) {
         case "yes":
@@ -10,7 +10,7 @@ function reducer(state, action) {
     }
 }
 
-const ThirdPersonCalls = () => {
+const ThirdPersonHardVerificationOtherCompanies = () => {
     const [state, dispatch] = useReducer(reducer, { answer: null, yesButtonColor: "gray", noButtonColor: "gray", text: "" });
 
     function confirm(e) {
@@ -23,9 +23,7 @@ const ThirdPersonCalls = () => {
     }
     return (
         <>
-            <h3>KONTAKT OSOBY TRZECIEJ</h3>
-            <h3>WYMAGANA WERYFIKACJA DODATKOWA</h3>
-            <h3>CZY JEST TO OSOBA FIZYCZNA ALBO JEDNOSOSOBOWA DZIAŁALNOŚĆ GOSPODARCZA?</h3>
+            <h3>PRZEPROWADŹ WERYFIKACJĘ TWARDĄ. CZY KLIENT PODAŁ PRAWIDŁOWE DANE? HASŁO ABONENCIE, KOD PUK?</h3>
 
             <button onClick={confirm} style={{ background: state.yesButtonColor }}>TAK</button>
             <button onClick={deny} style={{ background: state.noButtonColor }}>NIE</button>
@@ -33,12 +31,13 @@ const ThirdPersonCalls = () => {
             {state.answer === null ? (
                 <></>
             ) : state.answer === true ? (
-                <ThirdPersonHardVerification />
+
+                <AdditionalVerification />
             ) : (
-                <ThirdPersonHardVerificationOtherCompanies />
+                <></>
             )}
         </>
     )
 }
 
-export default ThirdPersonCalls
+export default ThirdPersonHardVerificationOtherCompanies
