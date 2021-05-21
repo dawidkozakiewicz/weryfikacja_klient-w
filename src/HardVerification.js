@@ -22,7 +22,7 @@ const HardVerification = () => {
         dispatch({ type: "no" });
     }
     return (
-        <>
+        <div>
             <h3>PRZEPROWADŹ WERYFIKACJĘ TWARDĄ. CZY KLIENT PODAŁ PRAWIDŁOWE DANE? HASŁO ABONENCIE, PESEL?</h3>
 
             <button onClick={confirm} style={{ background: state.yesButtonColor }}>TAK</button>
@@ -31,13 +31,13 @@ const HardVerification = () => {
             {state.answer === null ? (
                 <></>
             ) : state.answer === true ? (
-                <>
+                <div>
                     <h3>IDENTYFIKACJA KLIENTA POZYTYWNA. Możesz realizować wszystkie dyspozycje klienta, poza tymi, które wymagają pisma klienta.</h3>
-                </>
+                </div>
             ) : (
                 <QuestionAboutCase />
             )}
-        </>
+        </div>
     )
 }
 

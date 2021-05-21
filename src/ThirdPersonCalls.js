@@ -22,7 +22,7 @@ const ThirdPersonCalls = () => {
         dispatch({ type: "no" });
     }
     return (
-        <>
+        <div>
             <h3>KONTAKT OSOBY TRZECIEJ</h3>
             <h3>WYMAGANA WERYFIKACJA DODATKOWA</h3>
             <h3>CZY JEST TO OSOBA FIZYCZNA ALBO JEDNOSOSOBOWA DZIAŁALNOŚĆ GOSPODARCZA?</h3>
@@ -37,7 +37,7 @@ const ThirdPersonCalls = () => {
             ) : (
                 <ThirdPersonHardVerificationOtherCompanies />
             )}
-        </>
+        </div>
     )
 }
 

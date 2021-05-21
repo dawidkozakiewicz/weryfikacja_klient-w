@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 
 
 import OwnerOfTheNumberConfirmed from './OwnerOfTheNumberConfirmed'
@@ -9,11 +9,13 @@ function reducer(state, action) {
       return { ...state, answer: true, yesButtonColor: "green", noButtonColor: "white" };
     case "no":
       return { ...state, answer: false, noButtonColor: "red", yesButtonColor: "white" };
+    case "changecolor":
+      return { ...state, textColor: "aliceblue" }
   }
 }
 
 export default function App() {
-  const [state, dispatch] = useReducer(reducer, { answer: null, yesButtonColor: "white", noButtonColor: "white", text: "" });
+  const [state, dispatch] = useReducer(reducer, { answer: null, yesButtonColor: "white", noButtonColor: "white", textColor: "black" });
 
   function confirm(e) {
     dispatch({ type: "yes" });
@@ -24,9 +26,24 @@ export default function App() {
     dispatch({ type: "no" });
   }
 
+  function changeColor() {
+    dispatch({ type: "changecolor" })
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      changeColor()
+      console.log('hej!')
+
+    }, 1000);
+
+  }, [])
+
+
+
   return (
 
-    <div className="App">
+    <div className="App" style={{ color: state.textColor }}>
       <h2>1. W czym mogę pomóc?</h2>
       <h2>2. Jakiego numeru dotyczy sprawa?</h2>
       <h2>3. Na kogo zarejestrowany jest numer? Czy klient wie?</h2>
@@ -36,14 +53,14 @@ export default function App() {
       {state.answer === null ? (
         <></>
       ) : state.answer === true ? (
-        <>
+        <div>
           <OwnerOfTheNumberConfirmed />
 
-        </>
+        </div>
       ) : (
-        <>
+        <div>
           <h3>IDENTYFIKACJA NEGTYWNA Poinformuj klienta o braku możliwości obsługi z uwagi na błędne dane lub ich brak. Zaproś do ponownego kontaktu, kiedy klient będzie znał poprawne dane do identyfikacji, bądź zaproś do sklepu z dowodem osobistym jeśli jest właścicielem usługi.</h3>
-        </>
+        </div>
       )}
     </div>
 

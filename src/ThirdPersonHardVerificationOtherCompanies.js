@@ -22,7 +22,7 @@ const ThirdPersonHardVerificationOtherCompanies = () => {
         dispatch({ type: "no" });
     }
     return (
-        <>
+        <div>
             <h3>PRZEPROWADŹ WERYFIKACJĘ TWARDĄ. CZY KLIENT PODAŁ PRAWIDŁOWE DANE? HASŁO ABONENCIE, KOD PUK?</h3>
 
             <button onClick={confirm} style={{ background: state.yesButtonColor }}>TAK</button>
@@ -36,7 +36,7 @@ const ThirdPersonHardVerificationOtherCompanies = () => {
             ) : (
                 <></>
             )}
-        </>
+        </div>
     )
 }
 

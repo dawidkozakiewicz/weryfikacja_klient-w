@@ -25,7 +25,7 @@ const PersonOrSoleProprietorship = () => {
     }
 
     return (
-        <>
+        <div>
             <h3>CZY JEST TO OSOBA FIZYCZNA ALBO JEDNOSOSOBOWA DZIAŁALNOŚĆ GOSPODARCZA?</h3>
 
             <button onClick={confirm} style={{ background: state.yesButtonColor }}>TAK</button>
@@ -34,13 +34,13 @@ const PersonOrSoleProprietorship = () => {
             {state.answer === null ? (
                 <></>
             ) : state.answer === true ? (
-                <>
-                    <HardVerification />
-                </>
+
+                <HardVerification />
+
             ) : (
                 <HardVerificationBusiness />
             )}
-        </>
+        </div>
     )
 }
 

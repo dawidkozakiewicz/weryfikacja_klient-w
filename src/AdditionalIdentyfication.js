@@ -40,7 +40,7 @@ const AdditionalIdentyfication = () => {
             {state.answer === null ? (
                 <></>
             ) : state.answer === true ? (
-                <>
+                <div>
                     <h3>IDENTYFIKACJA KLIENTA OGRANICZONA</h3>
                     <h3>MOŻESZ ZREALIZOWAC TYLKO NASTĘPUJĄCE DYSPOZYCJE KLIENTA:</h3>
                     <ul>
@@ -51,7 +51,7 @@ const AdditionalIdentyfication = () => {
                         <li>włączenie/wyłączenie usług promocyjnych</li>
                         <li>podanie informacji o wykorzystanych jedniostach</li>
                     </ul>
-                </>
+                </div>
 
             ) : (
                 <>

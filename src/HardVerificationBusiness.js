@@ -22,7 +22,7 @@ const HardVerificationBusiness = () => {
         dispatch({ type: "no" });
     }
     return (
-        <>
+        <div>
             <h3>W TAKIM RAZIE BĘDĄ TO WSZELKIE POZOSTAŁE FORMY PRAWNE (SPÓŁKI Z O.O., FUNDACJE, INSTYTUCJA PUBLICZNE ETC.)</h3>
             <h3>PRZEPROWADŹ WERYFIKACJĘ TWARDĄ. CZY KLIENT PODAŁ PRAWIDŁOWE DANE? HASŁO ABONENCIE, KOD PUK?</h3>
 
@@ -32,13 +32,13 @@ const HardVerificationBusiness = () => {
             {state.answer === null ? (
                 <></>
             ) : state.answer === true ? (
-                <>
+                <div>
                     <h3>IDENTYFIKACJA KLIENTA POZYTYWNA. Możesz realizować wszystkie dyspozycje klienta, poza tymi, które wymagają pisma klienta.</h3>
-                </>
+                </div>
             ) : (
                 <QuestionAboutCase />
             )}
-        </>
+        </div>
     )
 }
 
