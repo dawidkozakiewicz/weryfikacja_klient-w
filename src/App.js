@@ -15,7 +15,7 @@ function reducer(state, action) {
 }
 
 export default function App() {
-  const [state, dispatch] = useReducer(reducer, { answer: null, yesButtonColor: "white", noButtonColor: "white", textColor: "black" });
+  const [state, dispatch] = useReducer(reducer, { answer: null, yesButtonColor: "white", noButtonColor: "white", textColor: "#a7cff2" });
 
   function confirm(e) {
     dispatch({ type: "yes" });
@@ -33,17 +33,21 @@ export default function App() {
   useEffect(() => {
     setTimeout(() => {
       changeColor()
-      console.log('hej!')
-
     }, 1000);
 
   }, [])
 
 
 
+  function handleReset() {
+    window.location.reload()
+  }
+
+
   return (
 
     <div className="App" style={{ color: state.textColor }}>
+      <div className="reset resetColor" onClick={handleReset}>RESET</div>
       <h2>1. W czym mogę pomóc?</h2>
       <h2>2. Jakiego numeru dotyczy sprawa?</h2>
       <h2>3. Na kogo zarejestrowany jest numer? Czy klient wie?</h2>

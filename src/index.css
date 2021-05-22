@@ -34,3 +34,35 @@ button:hover {
   filter: drop-shadow(-5px 5px 6px rgb(0, 0, 0));
   border-radius: 15px;
 }
+
+.App {
+  border: 2px dotted white;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+h1, h2, h3, p {
+  filter: drop-shadow(-2px 2px 3px rgb(0, 0, 0));
+}
+
+.reset {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: aliceblue;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  z-index: 1000;
+  font-size: 20px;
+  color: E22674;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  float: right;
+}
+
+.resetColor {
+  color: #E22674;
+}
