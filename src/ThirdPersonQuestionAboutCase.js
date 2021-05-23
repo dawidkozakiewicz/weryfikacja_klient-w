@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 import ThirdPersonDetailedIdentyfication from './ThirdPersonDetailedIdentyfication'
 
+
 function reducer(state, action) {
     switch (action.type) {
         case "yes":

@@ -6,16 +6,15 @@ import OwnerOfTheNumberConfirmed from './OwnerOfTheNumberConfirmed'
 function reducer(state, action) {
   switch (action.type) {
     case "yes":
-      return { ...state, answer: true, yesButtonColor: "green", noButtonColor: "white" };
+      return { ...state, answer: true, yesButtonColor: "#28E294", noButtonColor: "white" };
     case "no":
-      return { ...state, answer: false, noButtonColor: "red", yesButtonColor: "white" };
-    case "changecolor":
-      return { ...state, textColor: "aliceblue" }
+      return { ...state, answer: false, noButtonColor: "#D8524E", yesButtonColor: "white" };
+
   }
 }
 
 export default function App() {
-  const [state, dispatch] = useReducer(reducer, { answer: null, yesButtonColor: "white", noButtonColor: "white", textColor: "#a7cff2" });
+  const [state, dispatch] = useReducer(reducer, { answer: null, yesButtonColor: "white", noButtonColor: "white" });
 
   function confirm(e) {
     dispatch({ type: "yes" });
@@ -26,19 +25,6 @@ export default function App() {
     dispatch({ type: "no" });
   }
 
-  function changeColor() {
-    dispatch({ type: "changecolor" })
-  }
-
-  useEffect(() => {
-    setTimeout(() => {
-      changeColor()
-    }, 1000);
-
-  }, [])
-
-
-
   function handleReset() {
     window.location.reload()
   }
@@ -46,7 +32,7 @@ export default function App() {
 
   return (
 
-    <div className="App" style={{ color: state.textColor }}>
+    <div className="App">
       <div className="reset resetColor" onClick={handleReset}>RESET</div>
       <h2>1. W czym mogę pomóc?</h2>
       <h2>2. Jakiego numeru dotyczy sprawa?</h2>

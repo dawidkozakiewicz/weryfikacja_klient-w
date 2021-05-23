@@ -61,8 +61,30 @@ h1, h2, h3, p {
   align-items: center;
   cursor: pointer;
   float: right;
+  filter: drop-shadow(-2px 2px 3px rgb(0, 0, 0));
 }
 
 .resetColor {
   color: #E22674;
+}
+
+@media only screen and (max-width: 620px) {
+  .reset {
+    width: 70px;
+    height: 70px;
+  }
+  h1, h2, h3, p {
+    font-size: 14px;
+  }
+  li {
+    font-size: 11px;
+  }
+  .reset {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    margin-right: -22px;
+    top: 9px;
+    font-size: 15px;
+  }
 }
